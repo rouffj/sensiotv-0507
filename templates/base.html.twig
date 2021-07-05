@@ -30,27 +30,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="navbar-collapse collapse" id="collapsingNavbar">
-            <ul class="navbar-nav mx-auto text-center">
-                <li class="nav-item">
-                    <a class="nav-link" href="/" title="Back to the homepage">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/movie/top-rated" title="Get all top rated movies">Top Rated</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/movie/genres" title="Find your movie by genre">Browse By Genre</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/movie/latest" title="Get all new movies">Latest</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contact" title="You need some help ? Contact us !">Help Center</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav text-center">
-                <li class="nav-item active"><a class="nav-link" href="/login" title="Log in"><i class="fas fa-user"></i></a></li>
-                <li class="nav-item active"><a class="nav-link" href="/register" title="Register"><i class="fas fa-plus"></i></a></li>
-            </ul>
+            {{ include('_menu.html.twig') }}
         </div>
     </nav>
 </header>

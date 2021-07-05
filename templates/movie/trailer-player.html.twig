@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="author" content="SensioTV">
+    <meta name="description" content="Trailer Player.">
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=10"><![endif]-->
+
+    <title>SensioTV - Trailer Player</title>
+
+    <style>
+        iframe{width:100%;height:100%;border:none}.iframe-container{position:absolute;width:100%;height:100%;top:0;left:0;bottom:0;right:0;display:flex;flex-direction:column;justify-content:center;align-items:center}
+    </style>
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+    <!-- Personal CSS -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/sensiotv-theme.min.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/sensiotv-favicon.ico">
+    <link rel="icon" type="image/png" href="/assets/images/sensiotv-icon.png">
+    <link rel="apple-touch-icon" type="image/png" href="/assets/images/sensiotv-icon.png">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-dark navbar-expand-md fixed-top bg-dark justify-content-center">
+        <a class="navbar-brand mr-0" href="/"><img src="/assets/images/sensiotv-icon.png" alt="SensioTV Brand Icon"> <span class="color-green">TV+</span></a>
+        <button class="navbar-toggler ml-5" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="collapsingNavbar">
+            <ul class="navbar-nav mx-auto text-center">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/" title="Back to the homepage">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/movie/top-rated" title="Get all top rated movies">Top Rated</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/movie/genres" title="Find your movie by genre">Browse By Genre</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/movie/latest" title="Get all new movies">Latest</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact" title="You need some help ? Contact us !">Help Center</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav text-center">
+                <li class="nav-item active"><a class="nav-link" href="/user/cart" title="Register or log in"><i class="fas fa-shopping-bag"></i></a></li>
+                <li class="nav-item active"><a class="nav-link" href="/user/watchlist" title="Register or log in"><i class="fas fa-user"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!-- Fake player -->
+<div class="iframe-container">
+    <iframe src="http://www.youtube.com/embed/mbfNNHPrFvY?modestbranding=1&autoplay=1&mute=1&controls=1&fs=0&loop=1&rel=0&showinfo=0&disablekb=1" allow="autoplay; fullscreen"></iframe>
+</div>
+
+<!-- Vendor JS -->
+<script src="https://kit.fontawesome.com/8d75946265.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="author" content="SensioTV">
+    <meta name="description" content="User shopping cart.">
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=10"><![endif]-->
+
+    <meta property="og:image" content="https://university.sensiolabs.com/images/sensiolabs-university-fullwhite.png">
+    <meta property="og:title" content="SensioTV from SensioLabs University - My Cart">
+    <meta property="og:description" content="Access to your personal cart.">
+
+    <title>SensioTV - Shopping cart</title>
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+    <!-- Personal CSS -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/sensiotv-theme.min.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/sensiotv-favicon.ico">
+    <link rel="icon" type="image/png" href="/assets/images/sensiotv-icon.png">
+    <link rel="apple-touch-icon" type="image/png" href="/assets/images/sensiotv-icon.png">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-dark navbar-expand-md fixed-top bg-dark justify-content-center">
+        <a class="navbar-brand mr-0" href="/"><img src="/assets/images/sensiotv-icon.png" alt="SensioTV Brand Icon"> <span class="color-green">TV+</span></a>
+        <button class="navbar-toggler ml-5" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="collapsingNavbar">
+            <ul class="navbar-nav mx-auto text-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="/" title="Back to the homepage">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/movie/top-rated" title="Get all top rated movies">Top Rated</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/movie/genres" title="Find your movie by genre">Browse By Genre</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/movie/latest" title="Get all new movies">Latest</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact" title="You need some help ? Contact us !">Help Center</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav text-center">
+                <li class="nav-item active"><a class="nav-link" href="/user/cart" title="Register or log in"><i class="fas fa-shopping-bag"></i></a></li>
+                <li class="nav-item active"><a class="nav-link" href="/user/watchlist" title="Register or log in"><i class="fas fa-user"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main id="main">
+    <section id="central-section" class="bg-light p-5">
+        <div class="container jumbotron p-5 img-rounded">
+            <div class="row">
+                <div class="col">
+                    <h1 class="display-4 font-weight-bold">Your shopping cart is empty.</h1>
+                </div>
+            </div>
+            <div class="row m-5">
+                <div class="col text-center">
+                    <img class="img-fluid m-5" src="/assets/images/empty-cart.png" alt="Empty Cart Logo">
+                    <p class="lead">
+                        Your Shopping Cart lives to serve. Give it purpose — fill it with some cool movies.<br> You can find a lot <a class="lead" href="#" title="See all the top rated movies">here !</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="container py-5 mt-5 mb-5">
+    <div class="row">
+        <div class="col-sm-5">
+            <h5 class="font-weight-bold">Services</h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="/" title="Back to the homepage">Home</a></li>
+                <li><a class="text-muted" href="/movie/top-rated" title="Get all top rated movies">Top Rated</a></li>
+                <li><a class="text-muted" href="/movie/genres" title="Find your movie by genre">Browse By Genre</a></li>
+                <li><a class="text-muted" href="/movie/latest" title="Get all new movies">Latest</a></li>
+                <li><a class="text-muted" href="/contact" title="You need some help ?">Help Center</a></li>
+                <li><a class="text-muted" href="/login" title="Register or log in">Log In</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-5">
+            <h5 class="font-weight-bold">About</h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="#">Team</a></li>
+                <li><a class="text-muted" href="#">Locations</a></li>
+                <li><a class="text-muted" href="#">Privacy</a></li>
+                <li><a class="text-muted" href="#">Terms</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-2">
+            <a href="#main" class="font-weight-bold text-dark">Back to top <i class="far fa-arrow-alt-circle-up"></i></a>
+        </div>
+        <div class="col-12">
+            <p><strong>SensioTV+</strong> by <strong>Sensio<span class="color-green">Labs</span></strong> University<br><small class="d-block mb-3 text-muted">&copy; 2017-2020</small></p>
+        </div>
+    </div>
+</footer>
+
+<!-- Vendor JS -->
+<script src="https://kit.fontawesome.com/8d75946265.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous"></script>
+</body>
+</html>

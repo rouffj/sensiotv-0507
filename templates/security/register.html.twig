@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="author" content="SensioTV">
+    <meta name="description" content="Create your SensioTV account to order some cool movies.">
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=10"><![endif]-->
+
+    <meta property="og:image" content="https://university.sensiolabs.com/images/sensiolabs-university-fullwhite.png">
+    <meta property="og:title" content="SensioTV from SensioLabs University - Registration">
+    <meta property="og:description" content="Create your SensioTV account to order some cool movies.">
+
+    <title>SensioTV - Registration</title>
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+    <!-- Personal CSS -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/sensiotv-theme.min.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/sensiotv-favicon.ico">
+    <link rel="icon" type="image/png" href="/assets/images/sensiotv-icon.png">
+    <link rel="apple-touch-icon" type="image/png" href="/assets/images/sensiotv-icon.png">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-dark navbar-expand-md fixed-top bg-dark justify-content-center">
+        <a class="navbar-brand mr-0" href="/"><img src="/assets/images/sensiotv-icon.png" alt="SensioTV Brand Icon"> <span class="color-green">TV+</span></a>
+        <button class="navbar-toggler ml-5" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="collapsingNavbar">
+            <ul class="navbar-nav mx-auto text-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="/" title="Back to the homepage">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/movie/top-rated" title="Get all top rated movies">Top Rated</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/movie/genres" title="Find your movie by genre">Browse By Genre</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/movie/latest" title="Get all new movies">Latest</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact" title="You need some help ? Contact us !">Help Center</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav text-center">
+                <li class="nav-item active"><a class="nav-link" href="/user/cart" title="Register or log in"><i class="fas fa-shopping-bag"></i></a></li>
+                <li class="nav-item active"><a class="nav-link" href="/login" title="Register or log in"><i class="fas fa-user"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main id="main">
+    <section class="bg-light mb-5 mt-5">
+        <div class="container pb-5 pt-5">
+            <div class="row pb-5 pt-5">
+                <div class="col-md-10 mx-auto">
+                    <h1 class="font-weight-bold display-4 mt-2 ml-3 mb-5">Create your account.</h1>
+                    <form class="m-3">
+                        <div class="form-row">
+                            <div class="form-group col-md-6 p-1">
+                                <label for="_first_name" class="sr-only">First name</label>
+                                <input type="text" id="_first_name" name="_first_name" class="form-control form-control-lg" placeholder="First name" required autofocus>
+                            </div>
+                            <div class="form-group col-md-6 p-1">
+                                <label for="_last_name" class="sr-only">Last name</label>
+                                <input type="text" id="_last_name" name="_last_name" class="form-control form-control-lg" placeholder="Last name" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6 p-1">
+                                <label for="_email" class="sr-only">Email</label>
+                                <input type="email" id="_email" name="_email" class="form-control form-control-lg" placeholder="Email address" required>
+                            </div>
+                            <div class="form-group col-md-6 p-1">
+                                <label for="_phone_number" class="sr-only">Phone number</label>
+                                <input type="text" id="_phone_number" name="_phone_number" class="form-control form-control-lg" placeholder="Phone number" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6 p-1">
+                                <label for="_password" class="sr-only">Password</label>
+                                <input type="password" id="_password" name="_password" class="form-control form-control-lg" placeholder="Password" required>
+                            </div>
+                            <div class="form-group col-md-6 p-1">
+                                <label for="_confirm_password" class="sr-only">Confirm password</label>
+                                <input type="text" id="_confirm_password" name="_confirm_password" class="form-control form-control-lg" placeholder="Confirm password" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck">
+                                <label class="form-check-label" for="gridCheck">
+                                    Click here to indicate that you have read and agree to the terms presented in the Terms and Conditions agreement
+                                </label>
+                                <p>
+                                    <small>Your email and information are used to allow you to sign in securely and access your data. SensioTV records certain usage data for security, support and reporting purposes.</small>
+                                </p>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline-dark mt-3" type="submit">Create your SensioTV account</button>
+                        <div class="mt-4">
+                            <p>
+                                <a href="/password-recovering.html" title="Get a new password sent by email">Forgotten your password ? <i class="far fa-arrow-alt-circle-right"></i></a>
+                                <br>
+                                <a href="/login" title="Log in to your SensioTV account">You have an account ? Log in now. <i class="far fa-arrow-alt-circle-right"></i></a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="container py-5 mt-5 mb-5">
+    <div class="row">
+        <div class="col-sm-5">
+            <h5 class="font-weight-bold">Services</h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="/" title="Back to the homepage">Home</a></li>
+                <li><a class="text-muted" href="/movie/top-rated" title="Get all top rated movies">Top Rated</a></li>
+                <li><a class="text-muted" href="/movie/genres" title="Find your movie by genre">Browse By Genre</a></li>
+                <li><a class="text-muted" href="/movie/latest" title="Get all new movies">Latest</a></li>
+                <li><a class="text-muted" href="/contact" title="You need some help ?">Help Center</a></li>
+                <li><a class="text-muted" href="/login" title="Register or log in">Log In</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-5">
+            <h5 class="font-weight-bold">About</h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="#">Team</a></li>
+                <li><a class="text-muted" href="#">Locations</a></li>
+                <li><a class="text-muted" href="#">Privacy</a></li>
+                <li><a class="text-muted" href="#">Terms</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-2">
+            <a href="#main" class="font-weight-bold text-dark">Back to top <i class="far fa-arrow-alt-circle-up"></i></a>
+        </div>
+        <div class="col-12">
+            <p><strong>SensioTV+</strong> by <strong>Sensio<span class="color-green">Labs</span></strong> University<br><small class="d-block mb-3 text-muted">&copy; 2017-2020</small></p>
+        </div>
+    </div>
+</footer>
+
+<!-- Vendor JS -->
+<script src="https://kit.fontawesome.com/8d75946265.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous"></script>
+</body>
+</html>

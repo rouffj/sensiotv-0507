@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="author" content="SensioTV">
+    <meta name="description" content="Avengers movie details.">
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=10"><![endif]-->
+
+    <meta property="og:image" content="https://university.sensiolabs.com/images/sensiolabs-university-fullwhite.png">
+    <meta property="og:title" content="SensioTV from SensioLabs University - Avengers Movie Details">
+    <meta property="og:description" content="Avengers movie details.">
+
+    <title>SensioTV - Avengers: Endgame Details</title>
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+    <!-- Personal CSS -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/sensiotv-theme.min.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/sensiotv-favicon.ico">
+    <link rel="icon" type="image/png" href="/assets/images/sensiotv-icon.png">
+    <link rel="apple-touch-icon" type="image/png" href="/assets/images/sensiotv-icon.png">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-dark navbar-expand-md fixed-top bg-dark justify-content-center">
+        <a class="navbar-brand mr-0" href="/"><img src="/assets/images/sensiotv-icon.png" alt="SensioTV Brand Icon"> <span class="color-green">TV+</span></a>
+        <button class="navbar-toggler ml-5" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="collapsingNavbar">
+            <ul class="navbar-nav mx-auto text-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="/" title="Back to the homepage">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/movie/top-rated" title="Get all top rated movies">Top Rated</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/movie/genres" title="Find your movie by genre">Browse By Genre</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/movie/latest" title="Get all new movies">Latest</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact" title="You need some help ? Contact us !">Help Center</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav text-center">
+                <li class="nav-item active"><a class="nav-link" href="/user/cart" title="Register or log in"><i class="fas fa-shopping-bag"></i></a></li>
+                <li class="nav-item active"><a class="nav-link" href="/user/watchlist" title="Register or log in"><i class="fas fa-user"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main id="main">
+    <section id="central-section" class="bg-light p-5">
+        <div class="container jumbotron p-5 img-rounded">
+            <div class="row mb-5">
+                <div class="col-lg-10">
+                    <h1 class="display-4 font-weight-bold">{{ movie.title }} ({{ movie.releaseDate|date('Y') }}).</h1>
+                    <p class="text-success font-weight-bold">release date: {{ movie.releaseDate|date }}</p>
+                </div>
+                <div class="col-lg-2 my-auto">
+                    <h2 class="font-weight-bold"><i class="fas fa-star text-warning"></i> {{ random(0, 10) }}/10</h2>
+                    <small>613,329 votes</small>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-lg-3 pb-3">
+                    <div class="row text-center">
+                        <div class="col-lg-12 pl-4 pr-4">
+                            <a href="/trailer-player.html" title="See Avengers Endgame trailer" class="album-link">
+                                <img class="img-rounded img-fluid" src="{{ movie.image }}" alt="Empty Cart Logo">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="/trailer-player.html" title="See Avengers Endgame trailer" class="btn btn-sm btn-outline-success mt-3" role="button"><i class="fas fa-eye"></i> Watch the trailer</a>
+                            <a href="/user/cart" title="Add this movie to your cart" class="btn btn-sm btn-dark mt-3" role="button"><i class="fas fa-plus"></i> Add to cart: <b>09,99€</b></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 img-rounded bg-light p-4">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="details-tab" data-toggle="tab" href="#details" role="tab" aria-controls="details" aria-selected="true"><i class="fas fa-home"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="cast-tab" data-toggle="tab" href="#cast" role="tab" aria-controls="cast" aria-selected="false">Full Cast</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="did-you-know-tab" data-toggle="tab" href="#did-you-know" role="tab" aria-controls="did-you-know" aria-selected="false">Did You Know ?</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+
+                        <!-- Details -->
+                        <div class="tab-pane fade show active" id="details" role="tabpanel" aria-labelledby="details-tab">
+                            <div class="row pt-4 text-muted">
+                                <div class="col">
+                                    <p>{{ movie.plot }}</p>
+                                </div>
+                            </div>
+                            <div class="row pt-2">
+                                <div class="col-md-2">
+                                    <p class="font-weight-bold">Directors:</p>
+                                </div>
+                                <div class="col-md-10 text-muted">
+                                    <a href="#" title="See this director">Anthony Russo</a>, <a href="#" title="See this director">Joe Russo</a>
+                                </div>
+                            </div>
+                            <div class="row pt-2">
+                                <div class="col-md-2">
+                                    <p class="font-weight-bold">Writers:</p>
+                                </div>
+                                <div class="col-md-10 text-muted">
+                                    <a href="#" title="See this writer">Christopher Markus (screenplay by)</a>, <a href="#" title="See this writer">Stephen McFeely (screenplay by)</a>, <a href="#" title="See this writer">Stan Lee (based on the Marvel comics by)</a>, <a href="#" title="See this writer">Jack Kirby (based on the Marvel comics by)</a>, <a href="#" title="See this writer">Joe Simon (Captain America created by)</a>, <a href="#" title="See this writer">Jack Kirby (Captain America created by)</a>, <a href="#" title="See this writer">Steve Englehart (Star-Lord created by)</a>, <a href="#" title="See this writer">Steve Gan (Star-Lord created by)</a>, <a href="#" title="See this writer">Bill Mantlo (Rocket Raccoon created by)</a>, <a href="#" title="See this writer">Keith Giffen (Rocket Raccoon created by)</a>, <a href="#" title="See this writer">Jim Starlin (Thanos)</a>, <a href="#" title="See this writer">Gamora & Drax (created by)</a>, <a href="#" title="See this writer">Stan Lee (Groot created by)</a>, <a href="#" title="See this writer">Larry Lieber (Groot created by)</a>, <a href="#" title="See this writer">Jack Kirby (Groot created by)</a>, <a href="#" title="See this writer">Steve Englehart (Mantis created by)</a>, <a href="#" title="See this writer">Don Heck (Mantis created by)</a>
+                                </div>
+                            </div>
+                            <div class="row pt-2">
+                                <div class="col-md-2">
+                                    <p class="font-weight-bold">Actors:</p>
+                                </div>
+                                <div class="col-md-10 text-muted">
+                                    <a href="#" title="See this actor">Robert Downey Jr.</a>, <a href="#" title="See this actor">Chris Evans</a>, <a href="#" title="See this actor">Mark Ruffalo</a>, <a href="#" title="See this actor">Chris Hemsworth</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cast -->
+                        <div class="tab-pane fade" id="cast" role="tabpanel" aria-labelledby="cast-tab">
+                            <div class="row pt-4 text-muted">
+                                <div class="col">
+                                    <p>Cast overview, first billed only:</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col table-responsive">
+                                    <table class="table table-sm table-hover table-striped">
+                                        <tr>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor"><img height="44" width="32" alt="Robert Downey Jr." title="Robert Downey Jr." src="https://m.media-amazon.com/images/M/MV5BNzg1MTUyNDYxOF5BMl5BanBnXkFtZTgwNTQ4MTE2MjE@._V1_UX32_CR0,0,32,44_AL_.jpg"></a></td>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor"> Robert Downey Jr.</a></td>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor">Tony Stark</a> / <a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor">Iron Man</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor"><img height="44" width="32" alt="Chris Evans" title="Chris Evans" src="https://m.media-amazon.com/images/M/MV5BMTU2NTg1OTQzMF5BMl5BanBnXkFtZTcwNjIyMjkyMg@@._V1_UX32_CR0,0,32,44_AL_.jpg"></a></td>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor"> Chris Evans</a></td>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor">Steve Rogers</a> / <a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor">Captain America</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor"><img height="44" width="32" alt="Mark Ruffalo" title="Mark Ruffalo" src="https://m.media-amazon.com/images/M/MV5BNDQyNzMzZTMtYjlkNS00YzFhLWFhMTctY2M4YmQ1NmRhODBkXkEyXkFqcGdeQXVyNjcyNzgyOTE@._V1_UY44_CR1,0,32,44_AL_.jpg"></a></td>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor"> Mark Ruffalo</a></td>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor">Bruce Banner</a> / <a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor">Hulk</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor"><img height="44" width="32" alt="Chris Hemsworth" title="Chris Hemsworth" src="https://m.media-amazon.com/images/M/MV5BOTU2MTI0NTIyNV5BMl5BanBnXkFtZTcwMTA4Nzc3OA@@._V1_UX32_CR0,0,32,44_AL_.jpg"></a></td>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor"> Chris Hemsworth</a></td>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor">Thor</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor"><img height="44" width="32" alt="Scarlett Johansson" title="Scarlett Johansson" src="https://m.media-amazon.com/images/M/MV5BMTM3OTUwMDYwNl5BMl5BanBnXkFtZTcwNTUyNzc3Nw@@._V1_UY44_CR2,0,32,44_AL_.jpg"></a></td>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor"> Scarlett Johansson</a></td>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor">Natasha Romanoff</a> / <a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor">Black Widow</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor"><img height="44" width="32" alt="Jeremy Renner" title="Jeremy Renner" src="https://m.media-amazon.com/images/M/MV5BOTk2NDc2ODgzMF5BMl5BanBnXkFtZTcwMTMzOTQ4Nw@@._V1_UX32_CR0,0,32,44_AL_.jpg"></a></td>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor"> Jeremy Renner</a></td>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor">Clint Barton</a> / <a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor">Hawkeye</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor"><img height="44" width="32" alt="Don Cheadle" title="Don Cheadle" src="https://m.media-amazon.com/images/M/MV5BNDMxNDM3MzY5N15BMl5BanBnXkFtZTcwMjkzOTY4MQ@@._V1_UY44_CR1,0,32,44_AL_.jpg"></a></td>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor"> Don Cheadle</a></td>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor">James Rhodes</a> / <a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor">War Machine</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor"><img height="44" width="32" alt="Paul Rudd" title="Paul Rudd" src="https://m.media-amazon.com/images/M/MV5BMTY4NTEwNDg1MV5BMl5BanBnXkFtZTgwODMwMDA0ODE@._V1_UY44_CR1,0,32,44_AL_.jpg"></a></td>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor"> Paul Rudd</a></td>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor">Scott Lang</a> / <a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor">Ant-Man</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor"><img height="44" width="32" alt="Benedict Cumberbatch" title="Benedict Cumberbatch" src="https://m.media-amazon.com/images/M/MV5BMjE0MDkzMDQwOF5BMl5BanBnXkFtZTgwOTE1Mjg1MzE@._V1_UX32_CR0,0,32,44_AL_.jpg"></a></td>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor"> Benedict Cumberbatch</a></td>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor">Doctor Strange</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor"><img height="44" width="32" alt="Chadwick Boseman" title="Chadwick Boseman" src="https://m.media-amazon.com/images/M/MV5BMTk2OTY5MzcwMV5BMl5BanBnXkFtZTgwODM4MDI5MjI@._V1_UX32_CR0,0,32,44_AL_.jpg"></a></td>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor"> Chadwick Boseman</a></td>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor">T'Challa</a> / <a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor">Black Panther</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor"><img height="44" width="32" alt="Brie Larson" title="Brie Larson" src="https://m.media-amazon.com/images/M/MV5BMjExODkxODU3NF5BMl5BanBnXkFtZTgwNTM0MTk3NjE@._V1_UX32_CR0,0,32,44_AL_.jpg"></a></td>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor"> Brie Larson</a></td>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor">Carol Danvers</a> / <a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor">Captain Marvel</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor"><img height="44" width="32" alt="Tom Holland" title="Tom Holland" src="https://m.media-amazon.com/images/M/MV5BNTAzMzA3NjQwOF5BMl5BanBnXkFtZTgwMDUzODQ5MTI@._V1_UY44_CR2,0,32,44_AL_.jpg"></a></td>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor"> Tom Holland</a></td>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor">Peter Parker</a> / <a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor">Spider-Man</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor"><img height="44" width="32" alt="Karen Gillan" title="Karen Gillan" src="https://m.media-amazon.com/images/M/MV5BMTQwMDQ0NDk1OV5BMl5BanBnXkFtZTcwNDcxOTExNg@@._V1_UX32_CR0,0,32,44_AL_.jpg"></a></td>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor"> Karen Gillan</a></td>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor">Nebula</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor"><img height="44" width="32" alt="Zoe Saldana" title="Zoe Saldana" src="https://m.media-amazon.com/images/M/MV5BMTM2MjIwOTc0Nl5BMl5BanBnXkFtZTcwNzQ5ODM1Mw@@._V1_UX32_CR0,0,32,44_AL_.jpg"></a></td>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor"> Zoe Saldana</a></td>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor">Gamora</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor"><img height="44" width="32" alt="Evangeline Lilly" title="Evangeline Lilly" src="https://m.media-amazon.com/images/M/MV5BMTc2MDMzODU0OV5BMl5BanBnXkFtZTgwODIwOTAxMzI@._V1_UY44_CR3,0,32,44_AL_.jpg"></a></td>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor"> Evangeline Lilly</a></td>
+                                            <td><a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor">Hope Van Dyne</a> / <a href="https://fr.wikipedia.org/wiki/Robert_Downey_Jr" title="See this actor">Wasp</a></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Did You Know ? -->
+                        <div class="tab-pane fade" id="did-you-know" role="tabpanel" aria-labelledby="did-you-know-tab">
+                            <div class="row pt-4 text-muted">
+                                <div class="col-lg-12">
+                                    <h5 class="font-weight-bold">Trivia</h5>
+                                    <p>Back to the Future is mocked very often in this movie. Alan Silvestri, who scored every Avengers movie (Except Avengers: Age of Ultron (2015))including Avengers: Endgame, also scored the Back to the Future trilogy.</p>
+                                </div>
+                                <div class="col-lg-12">
+                                    <h5 class="font-weight-bold">Goofs</h5>
+                                    <p>The SHIELD employee describes one of the intruders as having a "hippie beard." The security guard asks if it was a "Bee Gees beard." While the Bee Gees were active in 1970, they had only one single on the U.S. charts that year and no one had any idea what they looked like, much less Barry Gibb's beard.</p>
+                                </div>
+                                <div class="col-lg-12">
+                                    <h5 class="font-weight-bold">Crazy Credits</h5>
+                                    <p>Does not include a mid-credits or a post-credits scene, the second film in the MCU to include neither, The Incredible Hulk (2008) was the first.</p>
+                                </div>
+                                <div class="col-lg-12">
+                                    <h5 class="font-weight-bold">Alternate Versions</h5>
+                                    <p>On June 28, 2019, the film was re-released with 6 minutes of extra footage after the credits.</p>
+                                </div>
+                                <div class="col-lg-12">
+                                    <p><a href="#" title="See more fn facts">See more >></a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col my-auto img-rounded bg-light pt-4 pb-4">
+                    <p class="m-0">
+                        <span class="good-score">78</span> Metascore | <span class="good-score">94</span> Rotten Tomatoes | <span class="good-score">78/100</span> Metacritic
+                    </p>
+                </div>
+            </div>
+
+            <!-- Trailers -->
+            <div class="row mb-4">
+                <div class="col">
+                    <h2 class="font-weight-bold">Trailers.</h2>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col my-auto img-rounded">
+                    <div class="row text-center text-lg-left">
+                        <div class="col-lg-3 p-3">
+                            <a href="/trailer-player.html" title="See this trailer" class="album-link">
+                                <img class="img-fluid" src="https://m.media-amazon.com/images/M/MV5BOThlNjdhZmQtNzlkOS00M2VjLWI0ZjUtZDExZDI1MjRhZGFkXkEyXkFqcGdeQW1yb3NzZXI@._V1_SP330,330,0,C,0,0,0_CR65,90,200,150_PIimdb-blackband-204-14,TopLeft,0,0_PIimdb-blackband-204-28,BottomLeft,0,1_CR0,0,200,150_PIimdb-bluebutton-big,BottomRight,-1,-1_ZATrailer,4,123,16,196,verdenab,8,255,255,255,1_ZAon%2520IMDb,4,1,14,196,verdenab,7,255,255,255,1_ZA01%253A06,164,1,14,36,verdenab,7,255,255,255,1_PIimdb-HDIconMiniWhite,BottomLeft,4,-2_ZAAvengers%253A%2520Endgame,24,138,14,176,arialbd,7,255,255,255,1_.jpg" alt="Trailer Thumbnail">
+                                <p class="text-muted"><small>"Policy" Trailer</small></p>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 p-3">
+                            <a href="/trailer-player.html" title="See this trailer" class="album-link">
+                                <img class="img-fluid" src="https://m.media-amazon.com/images/M/MV5BZDBlZjI3YmUtMjgyYi00NjhmLTkzMTgtZTUwYWVlNzdkYzQwXkEyXkFqcGdeQWFsZWxvZw@@._V1_SP330,330,0,C,0,0,0_CR65,90,200,150_PIimdb-blackband-204-14,TopLeft,0,0_PIimdb-blackband-204-28,BottomLeft,0,1_CR0,0,200,150_PIimdb-bluebutton-big,BottomRight,-1,-1_ZAClip,4,123,16,196,verdenab,8,255,255,255,1_ZAon%2520IMDb,4,1,14,196,verdenab,7,255,255,255,1_ZA02%253A56,164,1,14,36,verdenab,7,255,255,255,1_PIimdb-HDIconMiniWhite,BottomLeft,4,-2_ZAAvengers%253A%2520Endgame,24,138,14,176,arialbd,7,255,255,255,1_.jpg" alt="Trailer Thumbnail">
+                                <p class="text-muted"><small>"Awesome" TV Spot</small></p>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 p-3">
+                            <a href="/trailer-player.html" title="See this trailer" class="album-link">
+                                <img class="img-fluid" src="https://m.media-amazon.com/images/M/MV5BNDgxYzExYzQtYjQ0MC00NTAzLTkxMjctZWVhMDBmMjA1NTVjXkEyXkFqcGdeQW1yb2Njbw@@._V1_SP330,330,0,C,0,0,0_CR65,90,200,150_PIimdb-blackband-204-14,TopLeft,0,0_PIimdb-blackband-204-28,BottomLeft,0,1_CR0,0,200,150_PIimdb-bluebutton-big,BottomRight,-1,-1_ZAVideo,4,123,16,196,verdenab,8,255,255,255,1_ZAon%2520IMDb,4,1,14,196,verdenab,7,255,255,255,1_ZA01%253A40,164,1,14,36,verdenab,7,255,255,255,1_PIimdb-HDIconMiniWhite,BottomLeft,4,-2_ZAAnthony%2520Mackie%2520%2528S3%252EE28%2529,24,138,14,176,arialbd,7,255,255,255,1_.jpg" alt="Trailer Thumbnail">
+                                <p class="text-muted"><small>"We Owe It"</small></p>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 p-3">
+                            <a href="/trailer-player.html" title="See this trailer" class="album-link">
+                                <img class="img-fluid" src="https://m.media-amazon.com/images/M/MV5BOTM0MTc0NTgtNmZhZS00MjdmLTk4NGEtZjU4OGMzMGY4NWEyXkEyXkFqcGdeQXRyYW5zY29kZS13b3JrZmxvdw@@._V1_SP330,330,0,C,0,0,0_CR65,90,200,150_PIimdb-blackband-204-14,TopLeft,0,0_PIimdb-blackband-204-28,BottomLeft,0,1_CR0,0,200,150_PIimdb-bluebutton-big,BottomRight,-1,-1_ZAVideo,4,123,16,196,verdenab,8,255,255,255,1_ZAon%2520IMDb,4,1,14,196,verdenab,7,255,255,255,1_ZA00%253A31,164,1,14,36,verdenab,7,255,255,255,1_PIimdb-HDIconMiniWhite,BottomLeft,4,-2_ZAAvengers%253A%2520Endgame,24,138,14,176,arialbd,7,255,255,255,1_.jpg" alt="Trailer Thumbnail">
+                                <p class="text-muted"><small>"Found" TV Spot</small></p>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 p-3">
+                            <a href="/trailer-player.html" title="See this trailer" class="album-link">
+                                <img class="img-fluid" src="https://m.media-amazon.com/images/M/MV5BZWJkYjg1OWEtMGZlZS00MjdjLWE5Y2UtYmI3ZTZiNGJjYWRiXkEyXkFqcGdeQW1yb3NzZXI@._V1_SP330,330,0,C,0,0,0_CR65,90,200,150_PIimdb-blackband-204-14,TopLeft,0,0_PIimdb-blackband-204-28,BottomLeft,0,1_CR0,0,200,150_PIimdb-bluebutton-big,BottomRight,-1,-1_ZATrailer,4,123,16,196,verdenab,8,255,255,255,1_ZAon%2520IMDb,4,1,14,196,verdenab,7,255,255,255,1_ZA02%253A30,164,1,14,36,verdenab,7,255,255,255,1_PIimdb-HDIconMiniWhite,BottomLeft,4,-2_ZAAvengers%253A%2520Endgame,24,138,14,176,arialbd,7,255,255,255,1_.jpg" alt="Trailer Thumbnail">
+                                <p class="text-muted"><small>"No Mistakes, Kids" TV Spot</small></p>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 p-3">
+                            <a href="/trailer-player.html" title="See this trailer" class="album-link">
+                                <img class="img-fluid" src="https://m.media-amazon.com/images/M/MV5BMzgyMmIzODgtZTBiOS00MDg5LWJkYjAtMzJiMWY2NmU1ZTRmXkEyXkFqcGdeQXRyYW5zY29kZS13b3JrZmxvdw@@._V1_SP330,330,0,C,0,0,0_CR65,90,200,150_PIimdb-blackband-204-14,TopLeft,0,0_PIimdb-blackband-204-28,BottomLeft,0,1_CR0,0,200,150_PIimdb-bluebutton-big,BottomRight,-1,-1_ZAVideo,4,123,16,196,verdenab,8,255,255,255,1_ZAon%2520IMDb,4,1,14,196,verdenab,7,255,255,255,1_ZA00%253A57,164,1,14,36,verdenab,7,255,255,255,1_PIimdb-HDIconMiniWhite,BottomLeft,4,-2_ZARicky%2520Whittle%2520%2528S3%252EE14%2529,24,138,14,176,arialbd,7,255,255,255,1_.jpg" alt="Trailer Thumbnail">
+                                <p class="text-muted"><small>"To The End" Trailer</small></p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photos -->
+            <div class="row mb-4">
+                <div class="col">
+                    <h2 class="font-weight-bold">Photos.</h2>
+                </div>
+            </div>
+            <div class="row text-center mb-5">
+                <div class="col-md-3 p-1">
+                    <img class="img-fluid" src="https://m.media-amazon.com/images/M/MV5BMTAxMjE0NjAxOTZeQTJeQWpwZ15BbWU4MDQxNTk1OTcz._V1_UX99_CR0,0,99,99_AL_.jpg" alt="Photo Thumbnail">
+                </div>
+                <div class="col-md-3 p-1">
+                    <img class="img-fluid" src="https://m.media-amazon.com/images/M/MV5BMjQ2NDY5ODg0Ml5BMl5BanBnXkFtZTgwMjk1OTU5NzM@._V1_UY100_CR45,0,100,100_AL_.jpg" alt="Photo Thumbnail">
+                </div>
+                <div class="col-md-3 p-1">
+                    <img class="img-fluid" src="https://m.media-amazon.com/images/M/MV5BZGE1YzQwNWMtNTk0ZC00NWMxLWJhZjctNDYyNWJhYmM2NGIwXkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_UY100_CR45,0,100,100_AL_.jpg" alt="Photo Thumbnail">
+                </div>
+                <div class="col-md-3 p-1">
+                    <img class="img-fluid" src="https://m.media-amazon.com/images/M/MV5BOWQ0NmJlN2QtOTVjNi00YTY3LWE0MDUtOTlhMWFkZTA1MjExXkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_UY100_CR45,0,100,100_AL_.jpg" alt="Photo Thumbnail">
+                </div>
+                <div class="col-md-3 p-1">
+                    <img class="img-fluid" src="https://m.media-amazon.com/images/M/MV5BMzYxZTEwNWItNjJkNC00MTlmLWIxMjYtYmMxMGQ4NzU5MTY3XkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_UY100_CR45,0,100,100_AL_.jpg" alt="Photo Thumbnail">
+                </div>
+                <div class="col-md-3 p-1">
+                    <img class="img-fluid" src="https://m.media-amazon.com/images/M/MV5BYmFkYTMyMDgtYjA0ZC00MWExLTlhYTgtZDMxOTdmNDczYWEzXkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_UX100_CR0,0,100,100_AL_.jpg" alt="Photo Thumbnail">
+                </div>
+                <div class="col-md-3 p-1">
+                    <img class="img-fluid" src="https://m.media-amazon.com/images/M/MV5BMTgxMjAzNTQ3OV5BMl5BanBnXkFtZTgwMDI4OTM3NzM@._V1_UX100_CR0,0,100,100_AL_.jpg" alt="Photo Thumbnail">
+                </div>
+                <div class="col-md-3 p-1">
+                    <img class="img-fluid" src="https://m.media-amazon.com/images/M/MV5BYWUzMTJiOTQtNDllZS00M2Q1LWI2NjgtNGQwMmY1ZTczZmVkXkEyXkFqcGdeQXVyNjczOTE0MzM@._V1_UY100_CR69,0,100,100_AL_.jpg" alt="Photo Thumbnail">
+                </div>
+            </div>
+
+            <!-- User Reviews -->
+            <div class="row mb-4">
+                <div class="col">
+                    <h2 class="font-weight-bold">User Reviews.</h2>
+                </div>
+            </div>
+            <div class="row mb-5 p-3">
+                <div class="col img-rounded bg-light">
+                    <div class="row p-sm-5">
+                        <div class="col-md-2">
+                            <img class="img-fluid" src="/assets/images/review-woman-profile.jpg" alt="Photo Thumbnail">
+                            <p class="p-1 m-0"><span class="font-weight-bold">Madi P. </span><br> <small>12 subscribers</small></p>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="text-warning font-weight-bold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5,0</div>
+                            <p class="text-muted">Posted at April 24 2019</p>
+                            <p>14 000 605 hypothèses envisagées par Dr Strange mais bien une seule qui devra combler les promesses faites aux millions de spectateurs à travers le monde entier après le claquement de doigt le plus génocidaire de l'histoire du cinéma et elle se trouve bien entendu au coeur de "Avengers: Endgame" ! Deuxième partie de la conclusion-feu d'artifice de 21 films Marvel ayant construit l'univers le plus étendu que l'on ait vu sur grand écran, ...</p>
+                            <a href="#" title="Read all this comment"><small class="font-weight-bold">See more >></small></a>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row p-sm-5">
+                        <div class="col-md-2">
+                            <img class="img-fluid" src="/assets/images/review-man-profile.jpg" alt="Photo Thumbnail">
+                            <p class="p-1 m-0"><span class="font-weight-bold">x-worley. </span><br> <small>101 subscribers</small></p>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="text-muted font-weight-bold"><span class="text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i></span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span class="text-warning">2,0</span></div>
+                            <p class="text-muted">Posted at April 28 2019</p>
+                            <p>Ca me fait mal de dire ça car j'avais bien aimé le précédent mais pour moi c'est une totale déception! Ce film sous-exploite totalement les possibilitées d'"Infinity War" pour uniquement pour se concentrer sur de curieux égarements dont on se fiche royalement! C'est laborieux de bout en bout, car trop boursouflé (acteurs en roue libre) et l'humour je n'en parle même pas. Pour moi c'est niveau "thor ragnarok" ...</p>
+                            <a href="#" title="Read all this comment"><small class="font-weight-bold">See more >></small></a>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row p-sm-5">
+                        <div class="col-md-2">
+                            <img class="img-fluid" src="/assets/images/review-woman-profile-2.jpg" alt="Photo Thumbnail">
+                            <p class="p-1 m-0"><span class="font-weight-bold">Dandure. </span><br> <small>112 subscribers</small></p>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="text-muted font-weight-bold"><span class="text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span><i class="fas fa-star"></i> <span class="text-warning">4,0</span></div>
+                            <p class="text-muted">Posted at April 28 2019</p>
+                            <p>Une (belle) conclusion pour plus de 10 ans de films Marvel. Visuellement c’est beau. L’humour n’est pas déplaisant. L’action est cool et atteint même le génial durant la dernière du film. Un grand film de super-héros...</p>
+                            <a href="#" title="Read all this comment"><small class="font-weight-bold">See more >></small></a>
+                        </div>
+                    </div>
+                    <div class="row p-3">
+                        <p>
+                            <a href="#" title="Click and see all comments"><small class="font-weight-bold">See all comments >></small></a>
+                            <br>
+                            <a href="#" title="Post a review"><small class="font-weight-bold">Log in if you want to post a review !</small></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="container py-5 mt-5 mb-5">
+    <div class="row">
+        <div class="col-sm-5">
+            <h5 class="font-weight-bold">Services</h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="/" title="Back to the homepage">Home</a></li>
+                <li><a class="text-muted" href="/movie/top-rated" title="Get all top rated movies">Top Rated</a></li>
+                <li><a class="text-muted" href="/movie/genres" title="Find your movie by genre">Browse By Genre</a></li>
+                <li><a class="text-muted" href="/movie/latest" title="Get all new movies">Latest</a></li>
+                <li><a class="text-muted" href="/contact" title="You need some help ?">Help Center</a></li>
+                <li><a class="text-muted" href="/login" title="Register or log in">Log In</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-5">
+            <h5 class="font-weight-bold">About</h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="#">Team</a></li>
+                <li><a class="text-muted" href="#">Locations</a></li>
+                <li><a class="text-muted" href="#">Privacy</a></li>
+                <li><a class="text-muted" href="#">Terms</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-2">
+            <a href="#main" class="font-weight-bold text-dark">Back to top <i class="far fa-arrow-alt-circle-up"></i></a>
+        </div>
+        <div class="col-12">
+            <p><strong>SensioTV+</strong> by <strong>Sensio<span class="color-green">Labs</span></strong> University<br><small class="d-block mb-3 text-muted">&copy; 2017-2020</small></p>
+        </div>
+    </div>
+</footer>
+
+<!-- Vendor JS -->
+<script src="https://kit.fontawesome.com/8d75946265.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous"></script>
+</body>
+</html>

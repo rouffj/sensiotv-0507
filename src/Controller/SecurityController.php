@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Form\RegisterType;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,13 +23,16 @@ class SecurityController extends AbstractController
     /**
      * @Route("/register", name="register")
      */
-    public function register(Request $request): Response
+    public function register(Request $request, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(RegisterType::class);
         $form->add('register', Type\SubmitType::class, ['label' => 'Create your SensioTV account']);
 
         if ($form->handleRequest($request)->isSubmitted() && $form->isValid() && $form->get('terms')->getData()) {
             $user = $form->getData();
+            $entityManager->persist($user);
+
+            $entityManager->flush();
             dump($user);
             // Insert into DB
         }

@@ -1,15 +1,19 @@
 {% extends 'base.html.twig' %}
 
+{#
 {% form_theme register_form _self %}
-
+#}
 {# _IDCHAMPS_label|widget|errors #}
+{#
 {% block _register_email_label %}
     Email 📭 :
 {% endblock %}
 
+
 {% block _register_email_widget %}
     💌 <input id="register_email" class="form-control" name="register[email]" type="email" /> 💌
 {% endblock %}
+#}
 
 {% block content %}
     <section class="bg-light mb-5 mt-5">
@@ -19,7 +23,7 @@
                     <h1 class="font-weight-bold display-4 mt-2 ml-3 mb-5">Create your account.</h1>
 
 
-                    {{ form(register_form) }}
+                    {{ form(register_form, {'attr': {'novalidate': ''}}) }}
                     <div class="mt-4">
                         <p>
                             <a href="/password-recovering.html" title="Get a new password sent by email">Forgotten your password ? <i class="far fa-arrow-alt-circle-right"></i></a>

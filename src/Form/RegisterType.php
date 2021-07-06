@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -12,8 +13,8 @@ class RegisterType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('first_name', Type\TextType::class)
-            ->add('last_name')
+            ->add('name', Type\TextType::class, ['property_path' => 'firstName'])
+            ->add('lastName')
             ->add('email', Type\EmailType::class)
             ->add('phone', Type\TelType::class)
             ->add('password', Type\RepeatedType::class, [
@@ -22,7 +23,8 @@ class RegisterType extends AbstractType
                 'second_options' => ['label' => 'Repeat Password'],
             ])
             ->add('terms', Type\CheckboxType::class, [
-                'label' => 'Click here to indicate that you have read and agree to the terms presented in the Terms and Conditions agreement'
+                'label' => 'Click here to indicate that you have read and agree to the terms presented in the Terms and Conditions agreement',
+                'mapped' => false,
             ])
         ;
     }
@@ -30,7 +32,7 @@ class RegisterType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            // Configure your form options here
+            'data_class' => User::class
         ]);
     }
 }

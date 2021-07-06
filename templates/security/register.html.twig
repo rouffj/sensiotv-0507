@@ -1,62 +1,34 @@
 {% extends 'base.html.twig' %}
 
+{% form_theme register_form _self %}
+
+{# _IDCHAMPS_label|widget|errors #}
+{% block _register_email_label %}
+    Email 📭 :
+{% endblock %}
+
+{% block _register_email_widget %}
+    💌 <input id="register_email" class="form-control" name="register[email]" type="email" /> 💌
+{% endblock %}
+
 {% block content %}
     <section class="bg-light mb-5 mt-5">
         <div class="container pb-5 pt-5">
             <div class="row pb-5 pt-5">
                 <div class="col-md-10 mx-auto">
                     <h1 class="font-weight-bold display-4 mt-2 ml-3 mb-5">Create your account.</h1>
-                    <form class="m-3">
-                        <div class="form-row">
-                            <div class="form-group col-md-6 p-1">
-                                <label for="_first_name" class="sr-only">First name</label>
-                                <input type="text" id="_first_name" name="_first_name" class="form-control form-control-lg" placeholder="First name" required autofocus>
-                            </div>
-                            <div class="form-group col-md-6 p-1">
-                                <label for="_last_name" class="sr-only">Last name</label>
-                                <input type="text" id="_last_name" name="_last_name" class="form-control form-control-lg" placeholder="Last name" required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6 p-1">
-                                <label for="_email" class="sr-only">Email</label>
-                                <input type="email" id="_email" name="_email" class="form-control form-control-lg" placeholder="Email address" required>
-                            </div>
-                            <div class="form-group col-md-6 p-1">
-                                <label for="_phone_number" class="sr-only">Phone number</label>
-                                <input type="text" id="_phone_number" name="_phone_number" class="form-control form-control-lg" placeholder="Phone number" required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6 p-1">
-                                <label for="_password" class="sr-only">Password</label>
-                                <input type="password" id="_password" name="_password" class="form-control form-control-lg" placeholder="Password" required>
-                            </div>
-                            <div class="form-group col-md-6 p-1">
-                                <label for="_confirm_password" class="sr-only">Confirm password</label>
-                                <input type="text" id="_confirm_password" name="_confirm_password" class="form-control form-control-lg" placeholder="Confirm password" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck">
-                                <label class="form-check-label" for="gridCheck">
-                                    Click here to indicate that you have read and agree to the terms presented in the Terms and Conditions agreement
-                                </label>
-                                <p>
-                                    <small>Your email and information are used to allow you to sign in securely and access your data. SensioTV records certain usage data for security, support and reporting purposes.</small>
-                                </p>
-                            </div>
-                        </div>
-                        <button class="btn btn-outline-dark mt-3" type="submit">Create your SensioTV account</button>
-                        <div class="mt-4">
-                            <p>
-                                <a href="/password-recovering.html" title="Get a new password sent by email">Forgotten your password ? <i class="far fa-arrow-alt-circle-right"></i></a>
-                                <br>
-                                <a href="/login" title="Log in to your SensioTV account">You have an account ? Log in now. <i class="far fa-arrow-alt-circle-right"></i></a>
-                            </p>
-                        </div>
-                    </form>
+
+
+                    {{ form(register_form) }}
+                    <div class="mt-4">
+                        <p>
+                            <a href="/password-recovering.html" title="Get a new password sent by email">Forgotten your password ? <i class="far fa-arrow-alt-circle-right"></i></a>
+                            <br>
+                            <a href="/login" title="Log in to your SensioTV account">You have an account ? Log in now. <i class="far fa-arrow-alt-circle-right"></i></a>
+                        </p>
+                    </div>
+
+
                 </div>
             </div>
         </div>

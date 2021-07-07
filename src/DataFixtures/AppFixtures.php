@@ -45,7 +45,7 @@ class AppFixtures extends Fixture
 
         $manager->flush();
 
-        /*
+
         $movie1 = $manager->getRepository(Movie::class)->findOneBy(['title' => 'Memento']);
         $user1 = $manager->getRepository(User::class)->findOneBy(['email' => 'joseph@joseph.io']);
         $user2 = $manager->getRepository(User::class)->findOneBy(['email' => 'omar@sy.io']);
@@ -69,6 +69,6 @@ class AppFixtures extends Fixture
         $manager->persist($review2);
 
         $manager->flush();
-        */
+
     }
 }

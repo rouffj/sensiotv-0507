@@ -1,5 +1,7 @@
 {% extends 'base.html.twig' %}
 
+{% import 'macros.html.twig' as macros %}
+
 {% block content %}
     <section id="central-section" class="bg-light p-5">
         <div class="container jumbotron p-5 img-rounded">
@@ -289,51 +291,7 @@
             </div>
             <div class="row mb-5 p-3">
                 <div class="col img-rounded bg-light">
-                    <div class="row p-sm-5">
-                        <div class="col-md-2">
-                            <img class="img-fluid" src="/assets/images/review-woman-profile.jpg" alt="Photo Thumbnail">
-                            <p class="p-1 m-0"><span class="font-weight-bold">Madi P. </span><br> <small>12 subscribers</small></p>
-                        </div>
-                        <div class="col-md-10">
-                            <div class="text-warning font-weight-bold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5,0</div>
-                            <p class="text-muted">Posted at April 24 2019</p>
-                            <p>14 000 605 hypothèses envisagées par Dr Strange mais bien une seule qui devra combler les promesses faites aux millions de spectateurs à travers le monde entier après le claquement de doigt le plus génocidaire de l'histoire du cinéma et elle se trouve bien entendu au coeur de "Avengers: Endgame" ! Deuxième partie de la conclusion-feu d'artifice de 21 films Marvel ayant construit l'univers le plus étendu que l'on ait vu sur grand écran, ...</p>
-                            <a href="#" title="Read all this comment"><small class="font-weight-bold">See more >></small></a>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row p-sm-5">
-                        <div class="col-md-2">
-                            <img class="img-fluid" src="/assets/images/review-man-profile.jpg" alt="Photo Thumbnail">
-                            <p class="p-1 m-0"><span class="font-weight-bold">x-worley. </span><br> <small>101 subscribers</small></p>
-                        </div>
-                        <div class="col-md-10">
-                            <div class="text-muted font-weight-bold"><span class="text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i></span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span class="text-warning">2,0</span></div>
-                            <p class="text-muted">Posted at April 28 2019</p>
-                            <p>Ca me fait mal de dire ça car j'avais bien aimé le précédent mais pour moi c'est une totale déception! Ce film sous-exploite totalement les possibilitées d'"Infinity War" pour uniquement pour se concentrer sur de curieux égarements dont on se fiche royalement! C'est laborieux de bout en bout, car trop boursouflé (acteurs en roue libre) et l'humour je n'en parle même pas. Pour moi c'est niveau "thor ragnarok" ...</p>
-                            <a href="#" title="Read all this comment"><small class="font-weight-bold">See more >></small></a>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row p-sm-5">
-                        <div class="col-md-2">
-                            <img class="img-fluid" src="/assets/images/review-woman-profile-2.jpg" alt="Photo Thumbnail">
-                            <p class="p-1 m-0"><span class="font-weight-bold">Dandure. </span><br> <small>112 subscribers</small></p>
-                        </div>
-                        <div class="col-md-10">
-                            <div class="text-muted font-weight-bold"><span class="text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span><i class="fas fa-star"></i> <span class="text-warning">4,0</span></div>
-                            <p class="text-muted">Posted at April 28 2019</p>
-                            <p>Une (belle) conclusion pour plus de 10 ans de films Marvel. Visuellement c’est beau. L’humour n’est pas déplaisant. L’action est cool et atteint même le génial durant la dernière du film. Un grand film de super-héros...</p>
-                            <a href="#" title="Read all this comment"><small class="font-weight-bold">See more >></small></a>
-                        </div>
-                    </div>
-                    <div class="row p-3">
-                        <p>
-                            <a href="#" title="Click and see all comments"><small class="font-weight-bold">See all comments >></small></a>
-                            <br>
-                            <a href="#" title="Post a review"><small class="font-weight-bold">Log in if you want to post a review !</small></a>
-                        </p>
-                    </div>
+                    {{ macros.comments(movie) }}
                 </div>
             </div>
         </div>

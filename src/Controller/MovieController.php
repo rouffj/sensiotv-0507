@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\DataLoader;
+use App\Repository\MovieRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,10 +15,12 @@ class MovieController extends AbstractController
     /**
      * @Route("/movie/top-rated")
      */
-    public function topRated(): Response
+    public function topRated(MovieRepository $movieRepository): Response
     {
-        $dataLoader = new DataLoader();
-        $movies = $dataLoader->getMovies();
+        //$dataLoader = new DataLoader();
+        //$movies = $dataLoader->getMovies();
+
+        $movies = $movieRepository->findAll();
 
         return $this->render('movie/top-rated.html.twig', [
             'movies' => $movies
@@ -42,10 +46,9 @@ class MovieController extends AbstractController
     /**
      * @Route("/movie/{id}", name="movie_details", requirements={"id": "\d+"})
      */
-    public function details($id): Response
+    public function details($id, MovieRepository $movieRepository): Response
     {
-        $dataLoader = new DataLoader();
-        $movie = $dataLoader->findMovie($id);
+        $movie = $movieRepository->findOneBy(['id' => $id]);
 
         return $this->render('movie/details.html.twig', [
             'movie' => $movie

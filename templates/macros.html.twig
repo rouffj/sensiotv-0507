@@ -1,0 +1,14 @@
+{% macro comments(movie) %}
+    {% for review in movie.reviews %}
+        <div class="row p-sm-5">
+            <div class="col-md-2">
+                <p class="p-1 m-0"><span class="font-weight-bold">{{  review.user.firstName }} {{  review.user.lastName }}</span></p>
+            </div>
+            <div class="col-md-10">
+                <div class="text-warning font-weight-bold">{% for rating in range(1, review.rating) %}<i class="fas fa-star"></i>{% endfor %} {{ review.rating }}</div>
+                <p>{{ review.content }}</p>
+            </div>
+        </div>
+        <hr>
+    {% endfor %}
+{% endmacro %}

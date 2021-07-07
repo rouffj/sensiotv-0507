@@ -20,7 +20,7 @@
                     <div class="row text-center">
                         <div class="col-lg-12 pl-4 pr-4">
                             <a href="/trailer-player.html" title="See Avengers Endgame trailer" class="album-link">
-                                <img class="img-rounded img-fluid" src="{{ movie.image }}" alt="Empty Cart Logo">
+                                <img class="img-rounded img-fluid" src="{{ movieFromOmdb.Poster }}" alt="Empty Cart Logo">
                             </a>
                         </div>
                         <div class="col">
@@ -47,7 +47,7 @@
                         <div class="tab-pane fade show active" id="details" role="tabpanel" aria-labelledby="details-tab">
                             <div class="row pt-4 text-muted">
                                 <div class="col">
-                                    <p>{{ movie.plot }}</p>
+                                    <p>{{ movieFromOmdb.Plot }}</p>
                                 </div>
                             </div>
                             <div class="row pt-2">

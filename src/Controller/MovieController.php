@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\DataLoader;
+use App\Omdb\OmdbClient;
 use App\Repository\MovieRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -46,12 +47,15 @@ class MovieController extends AbstractController
     /**
      * @Route("/movie/{id}", name="movie_details", requirements={"id": "\d+"})
      */
-    public function details($id, MovieRepository $movieRepository): Response
+    public function details($id, MovieRepository $movieRepository, OmdbClient $omdb): Response
     {
         $movie = $movieRepository->findOneBy(['id' => $id]);
+        $movieFromOmdb = $omdb->requestByTitle($movie->getTitle());
 
+        dump($movieFromOmdb);
         return $this->render('movie/details.html.twig', [
-            'movie' => $movie
+            'movie' => $movie,
+            'movieFromOmdb' => $movieFromOmdb,
         ]);
     }
 

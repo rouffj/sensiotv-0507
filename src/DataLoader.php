@@ -21,8 +21,9 @@ class DataLoader
     public function getUsers(): array
     {
         return [
-            ['joseph', 'ROUFF', 'joseph@joseph.io', '$2y$13$dEs4kcshNIsjFaGCjPEqZO3bSdtrG44gTLh94EON2Ez1cfJUuguAG'], #testtest
-            ['omar', 'SY', 'omar@sy.io', '$2y$13$dEs4kcshNIsjFaGCjPEqZO3bSdtrG44gTLh94EON2Ez1cfJUuguAG'] #testtest
+            ['joseph', 'ROUFF', 'joseph@joseph.io', '$2y$13$dEs4kcshNIsjFaGCjPEqZO3bSdtrG44gTLh94EON2Ez1cfJUuguAG', []], #testtest
+            ['omar', 'SY', 'omar@sy.io', '$2y$13$dEs4kcshNIsjFaGCjPEqZO3bSdtrG44gTLh94EON2Ez1cfJUuguAG', ['ROLE_EDITOR']], #testtest
+            ['Fabien', 'POTENCIER', 'fabien@fabien.io', '$2y$13$dEs4kcshNIsjFaGCjPEqZO3bSdtrG44gTLh94EON2Ez1cfJUuguAG', ['ROLE_SUPERADMIN']], #testtest
         ];
     }
 

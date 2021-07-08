@@ -16,4 +16,14 @@ class DefaultController extends AbstractController
     {
         return $this->render('index.html.twig');
     }
+
+    /**
+     * @Route("/secretPageForEditors")
+     */
+    public function page1(): Response
+    {
+        $this->denyAccessUnlessGranted('ROLE_EDITOR');
+
+        return new Response('<h1>Secret page for editors</h1>');
+    }
 }

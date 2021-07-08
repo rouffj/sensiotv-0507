@@ -39,6 +39,7 @@ class AppFixtures extends Fixture
                 ->setLastName($user[1])
                 ->setEmail($user[2])
                 ->setPassword($user[3])
+                ->setRoles($user[4]);
             ;
             $manager->persist($u);
         }

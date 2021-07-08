@@ -17,6 +17,7 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
+            anonymous: true
             lazy: true
             provider: app_user_provider
             guard:
@@ -37,5 +38,11 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/movie/genres$, roles: [ROLE_USER, ROLE_EDITOR] }
+        - { path: ^/login, allow_if: 'is_anonymous() or is_granted("ROLE_ADMIN")'}
+        - { path: ^/movie/latest, allow_if: 'is_granted("ROLE_SUPERADMIN") and is_granted("ROLE_ADMIN")'}
         # - { path: ^/profile, roles: ROLE_USER }
+
+    role_hierarchy:
+        ROLE_SUPERADMIN:
+            - ROLE_ADMIN

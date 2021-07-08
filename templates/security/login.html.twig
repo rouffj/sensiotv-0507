@@ -6,36 +6,45 @@
             <div class="row align-items-center">
                 <div class="col-lg-5">
                     <h1 class="font-weight-bold display-4 mt-5 ml-2 mb-5">Log in to your account.</h1>
-                    <form class="form-signin" method="post" action="#">
-                        <div class="row">
-                            <div class="col-12 m-2">
-                                <label for="_email" class="sr-only">Email address</label>
-                                <input type="email" id="_email" name="_email" class="form-control form-control-lg" placeholder="Email address" required autofocus>
+
+                    <form method="post">
+                        {% if error %}
+                            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        {% endif %}
+
+                        {% if app.user %}
+                            <div class="mb-3">
+                                You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
                             </div>
-                            <div class="col-12 m-2">
-                                <label for="_password" class="sr-only">Password</label>
-                                <input type="password" id="_password" name="_password" class="form-control form-control-lg" placeholder="Password" required>
-                            </div>
-                            <div class="col-12 m-2">
-                                <div class="checkbox mb-4">
-                                    <label for="remember_me" class="sr-only">Remember me</label>
-                                    <input type="checkbox" id="remember_me" name="_remember_me" checked> Remember me
-                                </div>
-                            </div>
-                            <div class="col-12 m-2">
-                                <button class="btn btn-outline-dark btn-block" type="submit">Sign in</button>
-                                <!-- Do not keep this line -->
-                                <a href="/user/watchlist" class="font-weight-bold"><small>(Access to a fake account)</small></a>
-                            </div>
-                            <div class="col-12 m-2">
-                                <p>
-                                    <a href="/password-recovering.html" title="Get a new password sent by email">Forgotten your password ? <i class="far fa-arrow-alt-circle-right"></i></a>
-                                    <br>
-                                    <a href="/register" title="Create an account to SensioTV">Don't have an account ? Create one now. <i class="far fa-arrow-alt-circle-right"></i></a>
-                                </p>
-                            </div>
+                        {% endif %}
+
+                        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+                        <label for="inputEmail">Email</label>
+                        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+                        <label for="inputPassword">Password</label>
+                        <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+
+                        <input type="hidden" name="_csrf_token"
+                               value="{{ csrf_token('authenticate') }}"
+                        >
+
+                        {#
+                        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                        See https://symfony.com/doc/current/security/remember_me.html
+
+                        <div class="checkbox mb-3">
+                            <label>
+                                <input type="checkbox" name="_remember_me"> Remember me
+                            </label>
                         </div>
+                        #}
+
+                        <button class="btn btn-lg btn-primary" type="submit">
+                            Sign in
+                        </button>
                     </form>
+
+
                 </div>
                 <div class="col-lg-5 offset-lg-2 text-center">
                     <img class="img-fluid img-rounded" src="/assets/images/sensiolabs-university-icon.png" alt="SensioLabs University Logo">

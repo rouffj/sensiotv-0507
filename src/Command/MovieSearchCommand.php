@@ -23,7 +23,7 @@ class MovieSearchCommand extends Command
 
     public function __construct(OmdbClient $omdb, string $name = null)
     {
-        parent::__construct($name);
+        parent::__construct();
 
         $this->omdb = $omdb;
     }

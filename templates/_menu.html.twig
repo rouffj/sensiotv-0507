@@ -18,7 +18,8 @@
 </ul>
 
 {% if app.user %}
-    <div style="color: #fff;">Hi {{ app.user.firstName }} | <a href="{{ path('app_logout') }}">Logout</a></div>
+    <div style="color: #fff;">Hi {{ app.user.firstName }} | <a href="{{ path('app_logout') }}">Logout</a> (viewed at:
+        {{ app.user.lastLogin|date('Y-m-d') }})</div>
 {% else %}
 <ul class="navbar-nav text-center">
     <li class="nav-item active"><a class="nav-link" href="/login" title="Log in"><i class="fas fa-user"></i></a></li>
